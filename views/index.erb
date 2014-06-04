@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Braintree SDK</title>
+    <script src="braintree-2.0.0-rc1.js"></script>
+
+  </head>
+  <body>
+    <form action="/process" method="post">
+      <div id="checkout">
+
+      </div>
+      <input type="submit" id="submit" value="Pay">
+
+    </form>
+  </body>
+
+  <script charset="utf-8">
+    braintree.setup(<%= @client_token %>, 'dropin', {
+      container: 'checkout',
+    });
+  </script>
+</html>
