@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    awesome_print (1.2.0)
     braintree (2.30.2)
       builder (>= 2.0.0)
     builder (3.2.2)
@@ -17,5 +18,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   braintree
   sinatra

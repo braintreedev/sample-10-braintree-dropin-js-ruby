@@ -1,7 +1,9 @@
 require 'sinatra'
 require 'braintree'
+require_relative 'helpers/pretty_print.rb'
 
 class Application < Sinatra::Base
+  helpers Demo::PrettyPrint
 
   Braintree::Configuration.environment = :sandbox
   Braintree::Configuration.merchant_id = 'ffdqc9fyffn7yn2j'
@@ -14,16 +16,15 @@ class Application < Sinatra::Base
   end
 
   post "/process" do
-    transaction = Braintree::Transaction.sale(
+    result = Braintree::Transaction.sale(
       amount: "100.00",
       payment_method_nonce: params[:payment_method_nonce]
     )
 
-    if transaction.success?
-      raise transaction.inspect
-      "Payment success"
+    if result.success?
+      @transaction = result.transaction
+      erb :process
     else
-      raise transaction.inspect
       "Payment failed"
     end
   end
