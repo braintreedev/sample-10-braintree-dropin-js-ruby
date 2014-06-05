@@ -10,14 +10,14 @@ class Application < Sinatra::Base
   Braintree::Configuration.public_key = 'qj65nndbnn6qyjkp'
   Braintree::Configuration.private_key = 'a3de3bb7dddf68ed3c33f4eb6d9579ca'
 
-  get "/" do
+  get '/' do
     @client_token = Braintree::ClientToken.generate
     erb :index
   end
 
-  post "/process" do
+  post '/process' do
     result = Braintree::Transaction.sale(
-      amount: "100.00",
+      amount: '100.00',
       payment_method_nonce: params[:payment_method_nonce]
     )
 
@@ -25,7 +25,7 @@ class Application < Sinatra::Base
       @transaction = result.transaction
       erb :process
     else
-      "Payment failed"
+      'Payment failed'
     end
   end
 end

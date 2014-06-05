@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>New Braintree SDK</title>
-    <script src="braintree.js"></script>
-    <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
+    <title>A Braintree Drop In Payments Example</title>
+    <script src='braintree.js'></script>
+    <link rel='stylesheet' href='/components/bootstrap/dist/css/bootstrap.min.css'>
   </head>
   <body>
-    <form action="/process" method="post">
-      <div id="checkout">
+    <form action='/process' method='post'>
+      <div id='checkout'>
 
       </div>
-      <input type="submit" id="pay" value="Pay">
+      <input type='submit' id='pay' value='Pay'>
 
     </form>
   </body>
 
-  <script charset="utf-8">
+  <script charset='utf-8'>
     braintree.setup(<%= @client_token %>, 'dropin', {
       container: 'checkout',
     });
