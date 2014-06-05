@@ -6,18 +6,25 @@
     <link rel='stylesheet' href='/components/bootstrap/dist/css/bootstrap.min.css'>
   </head>
   <body>
-    <form action='/process' method='post'>
-      <div id='checkout'>
+    <div class='container'>
+      <form action='/process' method='post'>
+        <h2>Payment form</h2>
 
-      </div>
-      <input type='submit' id='pay' value='Pay'>
+        <div id='checkout'>
 
-    </form>
+        </div>
+
+        <br>
+        
+        <input type='submit' value='Submit Payment' class='btn btn-primary btn-lg'>
+
+      </form>
+    </div>
+
+    <script charset='utf-8'>
+      braintree.setup(<%= @client_token %>, 'dropin', {
+        container: 'checkout',
+      });
+    </script>
   </body>
-
-  <script charset='utf-8'>
-    braintree.setup(<%= @client_token %>, 'dropin', {
-      container: 'checkout',
-    });
-  </script>
 </html>
