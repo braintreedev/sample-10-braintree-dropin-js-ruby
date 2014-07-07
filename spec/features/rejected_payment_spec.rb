@@ -10,10 +10,9 @@ describe 'A rejected payment', js: true, type: :request do
       fill_in 'credit-card-number', with: card_number
       fill_in 'cvv', with: '200'
       fill_in 'expiration', with: '11/15'
-      fill_in 'postal-code', with: '90210'
     end
 
-    find_button('Pay').click
+    find_button('Submit Payment').click
 
     expect(page).to have_content('Payment failed')
   end

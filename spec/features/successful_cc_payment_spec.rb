@@ -10,10 +10,9 @@ describe 'A successful Credit Card payment', js: true, type: :request do
       fill_in 'credit-card-number', with: card_number
       fill_in 'cvv', with: '123'
       fill_in 'expiration', with: '11/15'
-      fill_in 'postal-code', with: '90210'
     end
 
-    find_button('Pay').click
+    find_button('Submit Payment').click
 
     expect(page).to have_content('Payment Success')
     expect(page).not_to have_content(card_number)

@@ -1,6 +1,8 @@
-# Using the Braintree Dropin SDK in Sinatra to make a payment
+# Using the Braintree Dropin JS Client Library in Sinatra to make a payment
 
-This is an example of the Braintree Drop-in SDK in Sinatra to make a CC or PayPal payment.
+[![Build Status](https://travis-ci.org/commercefactory/010-braintree-dropin-js-ruby.svg?branch=master)](https://travis-ci.org/commercefactory/010-braintree-dropin-js-ruby)
+
+This is an example of the Braintree Dropin JS Client Library in Sinatra to make a Credit Card or PayPal payment.
 
 This branch includes a lot of files for the purpose of testing. To see a simplified example please switch to the [simplified](https://github.com/commercefactory/XXX-braintree-dropin-sdk/tree/simplified) branch.
 
@@ -10,11 +12,10 @@ This demo uses
 
 * Ruby 1.9.3 or higher
 * The [Sinatra](http://www.sinatrarb.com/) web framework
-* The [Braintree Ruby SDK](https://www.braintreepayments.com/docs/ruby)
 
 ## Demo
 
-* Visit [X.commercefactory.org](http://X.commercefactory.org)
+* Visit [10.commercefactory.org](http://10.commercefactory.org)
 * Fill in the following credentials:
   * Number: `4111 1111 1111 1111`
   * CVV: `123`

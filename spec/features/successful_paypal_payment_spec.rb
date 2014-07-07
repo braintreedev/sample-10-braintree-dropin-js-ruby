@@ -15,7 +15,7 @@ describe 'A successful PayPal payment', js: true, type: :request do
       click_button 'Agree'
     end
 
-    click_button 'Pay'
+    click_button 'Submit Payment'
 
     expect(page).to have_content('Payment Success')
    end
