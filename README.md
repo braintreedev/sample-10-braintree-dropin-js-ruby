@@ -1,7 +1,5 @@
 # Using the Braintree Dropin SDK in Sinatra to make a payment
 
-[![Build Status](https://travis-ci.org/commercefactory/XXX-braintree-dropin-sdk.svg?branch=master)](https://travis-ci.org/commercefactory/XXX-braintree-dropin-sdk)
-
 This is an example of the Braintree Drop-in SDK in Sinatra to make a CC or PayPal payment.
 
 This branch includes a lot of files for the purpose of testing. To see a simplified example please switch to the [simplified](https://github.com/commercefactory/XXX-braintree-dropin-sdk/tree/simplified) branch.

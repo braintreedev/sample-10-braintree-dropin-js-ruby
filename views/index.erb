@@ -15,7 +15,7 @@
         </div>
 
         <br>
-        
+
         <input type='submit' value='Submit Payment' class='btn btn-primary btn-lg'>
 
       </form>
@@ -23,7 +23,7 @@
 
     <script charset='utf-8'>
       braintree.setup(<%= @client_token %>, 'dropin', {
-        container: 'checkout',
+        container: 'checkout'
       });
     </script>
   </body>
