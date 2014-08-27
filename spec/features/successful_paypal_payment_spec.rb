@@ -8,12 +8,20 @@ describe 'A successful PayPal payment', js: true, type: :request do
       click_button 'Pay with PayPal'
     end
 
-    within_frame(find('#braintree-paypal-frame')) do
-      fill_in 'email', with: 'us-customer@commercefactory.org'
-      fill_in 'password', with: 'test1234'
-      click_button 'Log In'
-      click_button 'Agree'
-    end
+    main = page.driver.browser.window_handles.first
+    popup = page.driver.browser.window_handles.last
+    page.driver.browser.switch_to.window(popup)
+
+    # within_frame(find('#braintree-paypal-frame')) do
+    fill_in 'email', with: 'us-customer@commercefactory.org'
+    fill_in 'password', with: 'test1234'
+    click_button 'Log In'
+    click_button 'Agree'
+    # end
+
+    sleep(5)
+    
+    page.driver.browser.switch_to.window(main)
 
     click_button 'Submit Payment'
 
