@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>A Braintree Dropin Payments Example</title>
-    <script src="https://js.braintreegateway.com/js/beta/braintree-2.0.0-rc2.js"></script>
+    <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
     <link rel='stylesheet' href='/components/bootstrap/dist/css/bootstrap.min.css'>
   </head>
   <body>
@@ -18,9 +18,9 @@
 
       </form>
     </div>
-
+    <%= session[:customer_id] %>
     <script charset='utf-8'>
-      braintree.setup(<%= @client_token %>, 'dropin', {
+      braintree.setup("<%= @client_token %>", 'dropin', {
         container: 'checkout'
       });
     </script>
